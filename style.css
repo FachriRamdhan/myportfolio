@@ -1,0 +1,485 @@
+:root {
+  --primary-font: "Poppins", sans-serif;
+  --primary-bg-color: #ffffff;
+  --primary-text-color: #000000;
+  --secondary-color: #575757;
+  --btn-bg-color: #2196f3;
+  --cta-hover-color: #167bce;
+  --btn-bg-light: #eeeeee;
+
+  --dark-primary-bg-color: #222222;
+  --dark-primary-text-color: #ffffff;
+  --dark-secondary-color: #828282;
+  --dark-btn-bg-color: #1e88e5;
+  --dark-cta-hover-color: #0d5e8c;
+  --dark-btn-bg-light: #eeeeee;
+}
+
+.dark-theme {
+  --primary-bg-color: var(--dark-primary-bg-color);
+  --primary-text-color: var(--dark-primary-text-color);
+  --secondary-color: var(--dark-secondary-color);
+  --btn-bg-color: var(--dark-btn-bg-color);
+  --cta-hover-color: var(--dark-cta-hover-color);
+  --btn-bg-light: var(--dark-btn-bg-light);
+}
+
+body {
+  margin: 0;
+  font-family: var(--primary-font, "Arial, sans-serif");
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  cursor: default;
+}
+
+.theme-btn {
+  position: relative;
+  left: 8.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hero-pic {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.hero-pic img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.inner-circle {
+  content: "";
+  position: absolute;
+  top: 0.1rem;
+  left: 0.1rem;
+  bottom: 0.1rem;
+  right: 0.1rem;
+  border-radius: 50%;
+  border: 0.18rem solid var(--primary-bg-color);
+  z-index: 1;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.hero-info h1,
+h2 {
+  font-weight: 400;
+}
+
+.hero-info h2 {
+  color: var(--secondary-color);
+  font-size: 1rem;
+  margin: 0 0 1rem 0;
+}
+
+.logo-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.logo-container a,
+.logo-container img {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.logo-container a:hover {
+  transform: scale(0.98);
+  -webkit-transform: scale(0.98);
+  -moz-transform: scale(0.98);
+  -ms-transform: scale(0.98);
+  -o-transform: scale(0.98);
+}
+
+.logo-container a:active {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+
+.experience {
+  display: flex;
+  flex-direction: column; /* Menyusun elemen h2 secara vertikal */
+  text-align: left;
+  justify-content: center;
+  margin: auto;
+  margin-top: 1.4rem;
+  max-width: 20rem;
+}
+
+.experience h2 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-weight: 300;
+  font-size: 0.9rem;
+  margin-bottom: 1rem; /* Menambahkan jarak antara h2 */
+}
+
+.experience h2 img.icon {
+  width: 20px; /* Ukuran ikon yang disesuaikan */
+  height: 20px;
+  margin-right: 8px; /* Jarak antara ikon dan teks */
+}
+
+.portfolio-skills {
+  display: flex;
+  justify-content: center;
+  height: 4rem;
+  margin-top: 0.5rem;
+  position: relative;
+}
+
+.btn-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  border: none;
+  font-weight: 600;
+  background-color: var(--btn-bg-light);
+  width: 20rem;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 0.3s ease, color 0.3s ease;
+  border-radius: 0.7rem;
+  -webkit-transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 0.3s ease, color 0.3s ease;
+  -moz-transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 0.3s ease, color 0.3s ease;
+  -ms-transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 0.3s ease, color 0.3s ease;
+  -o-transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-2 {
+  border-radius: 0.7rem;
+  -webkit-border-radius: 0.7rem;
+  -moz-border-radius: 0.7rem;
+  -ms-border-radius: 0.7rem;
+  -o-border-radius: 0.7rem;
+  border: none;
+  font-weight: 600;
+  height: 3rem;
+  width: 8.5rem;
+  transition: transform 0.3 cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 0.3s ease, color 0.3s ease;
+  -webkit-transition: transform 0.3 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: transform 0.3 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: transform 0.3 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: transform 0.3 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-2:hover {
+  cursor: pointer;
+  background-color: white;
+  transform: scale(0.98);
+  -webkit-transform: scale(0.98);
+  -moz-transform: scale(0.98);
+  -ms-transform: scale(0.98);
+  -o-transform: scale(0.98);
+}
+
+.btn-2:active {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+
+.active-btn {
+  background-color: white;
+}
+
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.wrapper {
+  text-align: center;
+  width: 20rem;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 0.3s ease, color 0.3s ease;
+  -webkit-transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 0.3s ease, color 0.3s ease;
+  -moz-transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 0.3s ease, color 0.3s ease;
+  -ms-transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 0.3s ease, color 0.3s ease;
+  -o-transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 0.3s ease, color 0.3s ease;
+}
+
+.wrapper img {
+  width: 100%;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.wrapper img:hover {
+  cursor: pointer;
+}
+
+.wrapper h3 {
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.project-wrapper {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-wrapper:hover {
+  transform: scale(0.98);
+  -webkit-transform: scale(0.98);
+  -moz-transform: scale(0.98);
+  -ms-transform: scale(0.98);
+  -o-transform: scale(0.98);
+}
+
+.project-wrapper:active {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  display: none;
+}
+
+article {
+  display: flex;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+article p {
+  border-radius: 0.5rem;
+  flex-grow: 20;
+  padding: 1rem;
+  color: var(--secondary-color);
+  background-color: var(--btn-bg-light);
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+/* Education Section */
+.education {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.education h3 {
+  font-weight: 600;
+  color: var(--dark-primary-text-color); /* Warna gelap untuk judul */
+}
+
+/* Konten pendidikan dengan ukuran lebih kecil */
+.education-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem; /* Jarak antar item lebih kecil */
+  max-width: 28rem; /* Ukuran konten lebih kecil */
+  margin: 0 auto;
+}
+
+.education-item {
+  background-color: var(--dark-primary-bg-color);
+  /*Backgroundwarnagelap*/padding: 0.8rem;
+  border-radius: 0.5rem;
+  text-align: left;
+  color: var(--dark-primary-text-color);
+  /*Warnateksgelap*/box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /*Sedikitbayangan*/:;
+  -webkit-border-radius:;
+  -moz-border-radius:;
+  -ms-border-radius:;
+  -o-border-radius:;
+}
+
+.education-item h4 {
+  font-weight: 600;
+  margin-top: 0.30rem;
+  font-size: 1rem; /* Ukuran teks lebih kecil */
+}
+
+.education-item p {
+  margin: 0.1rem 0;
+  color: var(--dark-secondary-color); /* Warna teks lebih gelap */
+  font-size: 0.9rem;
+}
+
+/* Tambahan untuk ikon Font Awesome */
+.education-item h4 i,
+.education-item p i {
+  margin-right: 0.5rem;
+  color: var(--btn-bg-color); /* Warna ikon sesuai tema tombol */
+}
+
+/* Responsif */
+@media screen and (max-width: 768px) {
+  .education-content {
+    max-width: 100%; /* Lebar penuh di perangkat kecil */
+  }
+}
+
+/* Certificate Section */
+.certificate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-left: 27rem;
+}
+
+.certificate h3 {
+  font-weight: 600;
+}
+
+/* Grid layout dengan ukuran yang lebih kecil */
+.certificate-content {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(15rem, 1fr)
+  ); /* Ukuran grid lebih kecil */
+  gap: 1rem;
+  width: 100%;
+  max-width: 40rem; /* Lebar maksimum konten sertifikat lebih kecil untuk mengecilkan item */
+  margin: 0 auto;
+}
+
+.certificate-item {
+  background-color: var(--btn-bg-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*Memposisikankontenditengahsecaravertikal*/align-items: center;
+  /*Memposisikankontenditengahsecarahorizontal*/min-height: 8rem;
+   /* Tinggi minimum lebih kecil */:;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+.certificate-item h4 {
+  font-size: 100%;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+  color: var(--dark-primary-bg-color);
+}
+
+.certificate-item p {
+  margin: 0.2rem 0;
+  color: var(--secondary-color);
+}
+
+/* Responsiveness for Education and Certificates */
+@media screen and (max-width: 768px) {
+  .certificate-content {
+    grid-template-columns: 1fr;
+    max-width: 100%; /* Lebar penuh untuk mobile */
+  }
+  .certificate {
+    margin-left: 2.2rem;
+  }
+}
+
+footer {
+  display: flex;
+  margin: 3rem 0;
+  justify-content: center;
+}
+
+@media screen and (min-width: 900px) {
+  .skills,
+  .portfolio {
+    flex-direction: row;
+    width: 45rem;
+  }
+  .skills {
+    margin: 2rem auto 0;
+  }
+  .portfolio {
+    margin: 2rem auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .wrapper {
+    width: calc(48%);
+    flex: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience h2 {
+    font-size: 1.2rem; /* Sesuaikan ukuran font pada perangkat lebih kecil */
+  }
+
+  .experience h2 img.icon {
+    width: 20px; /* Ukuran ikon untuk perangkat lebih kecil */
+    height: 20px;
+  }
+}

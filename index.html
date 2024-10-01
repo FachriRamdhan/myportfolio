@@ -3,15 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fachri Ramdhan</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Portfolio Fachri Ramdhan</title>
+    <link rel="shortcut icon" href="tailwind.svg" type="image/x-icon" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -19,216 +16,520 @@
 
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <section class="hero">
-      <img id="toggleTheme" class="theme-btn" src="#" alt="theme icon" />
-      <div class="hero-pic">
-        <div class="inner-circle"></div>
-        <img src="assets/profile.png" alt="Fachri Ramdhan" />
+  <body
+    class="bg-gray-100 flex flex-col items-center transition-colors duration-300"
+    id="body"
+  >
+    <!-- Dark Mode Toggle -->
+    <div class="absolute top-4 right-4">
+      <button
+        id="toggle"
+        class="text-gray-700 hover:text-gray-900 focus:outline-none"
+      >
+        <i class="fas fa-sun text-yellow-500" id="toggle-icon"></i>
+      </button>
+    </div>
+
+    <!-- Header -->
+    <header class="text-center py-10">
+      <img
+        src="https://img.freepik.com/premium-photo/criminologist-digital-avatar-generative-ai_934475-9136.jpg"
+        alt="Profile Picture"
+        class="rounded-full mx-auto mb-5 w-32 h-32"
+      />
+      <h1 class="text-3xl font-bold">Fachri Ramdhan</h1>
+      <h2 class="text-lg text-gray-600 dark:text-white">Web Developer</h2>
+      <div class="flex justify-center space-x-8 mt-3">
+        <span class="text-md text-gray-500 flex items-center dark:text-white">
+          <i class="fas fa-user-graduate text-blue-600 mr-2 social-icon"></i>
+          S1 Teknologi Informasi
+        </span>
+        <span class="text-md text-gray-500 flex items-center dark:text-white">
+          <i class="fas fa-map-marker-alt text-red-600 mr-2 social-icon"></i>
+          Based in Jakarta
+        </span>
       </div>
-      <div class="hero-info">
-        <h1>Fachri Ramdhan</h1>
-        <h2>Web Developer</h2>
-        <div class="logo-container">
-          <a href="#">
-            <img src="assets/email_light.png" alt="email logo" />
-          </a>
-          <a href="#">
-            <img src="assets/phone_light.png" alt="phone logo" />
-          </a>
-          <a href="#">
-            <img src="assets/linkedin_light.png" alt="linkedin logo" />
-          </a>
-          <a href="#">
-            <img src="assets/instagram_light.png" alt="instagram logo" />
-          </a>
+    </header>
+
+    <!-- Contact Icons -->
+    <div class="flex space-x-8 mb-5 mt-1">
+      <a
+        href="mailto:fachriramdhan04@gmail.com"
+        class="text-gray-700 hover:text-gray-900 flex items-center dark:text-white"
+      >
+        <i class="fas fa-envelope text-red-500 mr-2 social-icon"></i>
+        <span class="text-gray-500 dark:text-white">Email</span>
+      </a>
+      <a
+        href="https://wa.me/+6281775117906"
+        class="text-green-600 hover:text-green-500 flex items-center"
+      >
+        <i class="fab fa-whatsapp whatsapp-icon mr-2"></i>
+        <span class="whatsapp-text">WhatsApp</span>
+      </a>
+    </div>
+
+    <!-- Social Media Icons -->
+    <div class="flex space-x-4 mb-10">
+      <a
+        href="#"
+        class="text-gray-700 hover:text-gray-900 social-icon dark:text-white"
+        ><i class="fab fa-github"></i
+      ></a>
+      <a
+        href="#"
+        class="text-blue-600 hover:text-blue-500 social-icon dark:text-white"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+      <a
+        href="#"
+        class="text-blue-400 hover:text-blue-300 social-icon dark:text-white"
+        ><i class="fab fa-twitter"></i
+      ></a>
+      <a
+        href="#"
+        class="text-pink-500 hover:text-pink-400 social-icon dark:text-white"
+        ><i class="fab fa-instagram"></i
+      ></a>
+    </div>
+
+    <!-- Buttons -->
+    <div
+      class="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-xs sm:max-w-lg mb-10"
+    >
+      <a id="education-btn" class="button dark:bg-gray-800 dark:text-black"
+        ><i class="fas fa-graduation-cap"></i> Education</a
+      >
+      <a id="certificate-btn" class="button dark:bg-gray-800 dark:text-black"
+        ><i class="fas fa-certificate"></i> Certificate</a
+      >
+      <a id="project-btn" class="button dark:bg-gray-800 dark:text-black"
+        ><i class="fas fa-project-diagram"></i> Project</a
+      >
+      <a id="skills-btn" class="button dark:bg-gray-800 dark:text-black"
+        ><i class="fas fa-laptop-code"></i> Skills</a
+      >
+    </div>
+
+    <!-- Education Content -->
+    <div
+      id="education-content"
+      class="content-section bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-4xl mx-auto mt-10"
+    >
+      <h3
+        class="text-xl sm:text-lg md:text-2xl lg:text-3xl font-bold text-blue-600 dark:text-black mb-8 text-center whitespace-nowrap"
+      >
+        🎓 Educational Background
+      </h3>
+
+      <!-- Education Ladder -->
+      <div class="relative">
+        <!-- SMK Education -->
+        <div class="flex items-start mb-12">
+          <div
+            class="relative z-10 flex-shrink-0 w-10 h-10 bg-blue-600 dark:bg-black rounded-full flex items-center justify-center text-white dark:text-black text-lg font-semibold"
+          >
+            1
+          </div>
+          <div class="ml-6">
+            <h4 class="text-xl font-semibold text-gray-800 dark:text-black">
+              Universitas Darma Persada
+            </h4>
+            <p class="text-gray-700 dark:text-black mt-1">
+              S1 Teknologi Informasi
+            </p>
+            <p class="text-gray-700 dark:text-black">Tahun: 2010 - 2013</p>
+            <p class="text-gray-700 dark:text-black mt-2">
+              Skills: HTML, CSS, Basic JavaScript, Problem Solving
+            </p>
+          </div>
+        </div>
+
+        <!-- S1 Education -->
+        <div class="flex items-start mb-12">
+          <div
+            class="relative z-10 flex-shrink-0 w-10 h-10 bg-blue-600 dark:bg-black rounded-full flex items-center justify-center text-white dark:text-black text-lg font-semibold"
+          >
+            2
+          </div>
+          <div class="ml-6">
+            <h4 class="text-xl font-semibold text-gray-800 dark:text-black">
+              SMK Dinamika Pembangunan 1
+            </h4>
+            <p class="text-gray-700 dark:text-black mt-1">
+              Jurusan: Teknik Komputer & Jaringan
+            </p>
+            <p class="text-gray-700 dark:text-black">Tahun: 2014 - 2018</p>
+            <p class="text-gray-700 dark:text-black mt-2">
+              Skills: Web Development, Java, MySQL, Software Engineering
+            </p>
+          </div>
+        </div>
+
+        <!-- Connecting Line -->
+        <div
+          class="absolute top-0 left-5 h-full border-l-4 border-blue-300 dark:border-black transform -translate-x-1/2 z-0"
+        ></div>
+      </div>
+    </div>
+
+    <!-- Certificate Content -->
+    <div
+      id="certificate-content"
+      class="content-section bg-white p-6 rounded-lg shadow-lg max-w-4xl mx-auto mt-10"
+    >
+      <h3
+        class="text-xl sm:text-lg md:text-2xl lg:text-3xl font-bold text-green-600 mb-6 text-center whitespace-nowrap"
+      >
+        📜 Certifications & Accomplishments
+      </h3>
+
+      <!-- Certificate Boxes -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <!-- Certificate Card 1 -->
+        <div
+          class="border rounded-lg p-6 shadow-lg bg-gray-50 hover:bg-white transform hover:-translate-y-1 hover:shadow-2xl transition duration-300 ease-in-out"
+        >
+          <h4 class="font-semibold text-lg text-blue-600">
+            Google Certified Mobile Web Specialist
+          </h4>
+          <p class="text-gray-700 mt-2">Issued by: Google</p>
+          <p class="text-gray-700 mt-2">Skills: Mobile Web Development</p>
+        </div>
+        <!-- Certificate Card 2 -->
+        <div
+          class="border rounded-lg p-6 shadow-lg bg-gray-50 hover:bg-white transform hover:-translate-y-1 hover:shadow-2xl transition duration-300 ease-in-out"
+        >
+          <h4 class="font-semibold text-lg text-blue-600">
+            JavaScript Algorithms and Data Structures
+          </h4>
+          <p class="text-gray-700 mt-2">Issued by: freeCodeCamp</p>
+          <p class="text-gray-700 mt-2">Skills: JavaScript</p>
+        </div>
+        <!-- Certificate Card 3 -->
+        <div
+          class="border rounded-lg p-6 shadow-lg bg-gray-50 hover:bg-white transform hover:-translate-y-1 hover:shadow-2xl transition duration-300 ease-in-out"
+        >
+          <h4 class="font-semibold text-lg text-blue-600">
+            React Developer Certificate
+          </h4>
+          <p class="text-gray-700 mt-2">Issued by: Udacity</p>
+          <p class="text-gray-700 mt-2">Skills: React Development</p>
+        </div>
+        <!-- Certificate Card 4 -->
+        <div
+          class="border rounded-lg p-6 shadow-lg bg-gray-50 hover:bg-white transform hover:-translate-y-1 hover:shadow-2xl transition duration-300 ease-in-out"
+        >
+          <h4 class="font-semibold text-lg text-blue-600">
+            Full Stack Web Development
+          </h4>
+          <p class="text-gray-700 mt-2">Issued by: Coursera</p>
+          <p class="text-gray-700 mt-2">Skills: Full Stack Development</p>
+        </div>
+        <!-- Certificate Card 5 -->
+        <div
+          class="border rounded-lg p-6 shadow-lg bg-gray-50 hover:bg-white transform hover:-translate-y-1 hover:shadow-2xl transition duration-300 ease-in-out"
+        >
+          <h4 class="font-semibold text-lg text-blue-600">
+            Node.js Certification
+          </h4>
+          <p class="text-gray-700 mt-2">Issued by: Node.js Foundation</p>
+          <p class="text-gray-700 mt-2">Skills: Node.js</p>
+        </div>
+        <!-- Certificate Card 6 -->
+        <div
+          class="border rounded-lg p-6 shadow-lg bg-gray-50 hover:bg-white transform hover:-translate-y-1 hover:shadow-2xl transition duration-300 ease-in-out"
+        >
+          <h4 class="font-semibold text-lg text-blue-600">
+            Flutter Development Bootcamp
+          </h4>
+          <p class="text-gray-700 mt-2">Issued by: Udemy</p>
+          <p class="text-gray-700 mt-2">Skills: Flutter Development</p>
         </div>
       </div>
-    </section>
 
-    <section class="experience">
-      <h2>
-        <img src="assets/loca.png" alt="Location Icon" class="icon" />
-        Based in Jakarta, Indonesia
-      </h2>
-      <h2>
-        <img
-          src="assets/graduate-person-6617234-5501757.webp"
-          alt="Graduation Icon"
-          class="icon"
-        />
-        S1 Teknologi Informasi
-      </h2>
-    </section>
+      <p class="text-gray-700 mt-10 text-center">
+        These certifications demonstrate my expertise in
+        <strong>JavaScript</strong>, <strong>React</strong>, and
+        <strong>Full Stack Development</strong>.
+      </p>
+    </div>
 
-    <section class="portfolio-skills">
-      <div class="btn-bg">
-        <button class="btn-2" id="edu-btn">Education</button>
-        <button class="btn-2" id="certif-btn">Certificate</button>
-      </div>
-    </section>
+    <!-- Project Content -->
+    <div
+      id="project-content"
+      class="content-section bg-white p-6 rounded-lg shadow-lg max-w-5xl mx-auto mt-10"
+    >
+      <h3
+        class="text-xl sm:text-lg md:text-2xl lg:text-3xl font-bold text-purple-600 mb-6 text-center whitespace-nowrap"
+      >
+        💻 My Projects
+      </h3>
 
-    <section class="portfolio-skills">
-      <div class="btn-bg">
-        <button class="btn-2 active-btn" id="portfolio-btn">portfolio</button>
-        <button class="btn-2" id="skills-btn">Skills</button>
-      </div>
-    </section>
+      <p
+        class="text-gray-600 leading-relaxed text-center max-w-3xl mx-auto mb-8"
+      >
+        I have had the privilege of working on a diverse range of projects, from
+        small websites to fully-fledged web applications. My portfolio showcases
+        a blend of creativity, functionality, and user experience.
+      </p>
 
-    <!-- belum diedit -->
-    <section class="portfolio" id="portfolio">
-      <div class="wrapper project-wrapper">
-        <a href="https://github.com/"
-          ><img src="assets/web.jpg" alt="Project 1"
-        /></a>
-      </div>
-      <div class="wrapper project-wrapper">
-        <a href="https://github.com/"
-          ><img src="assets/web.jpg" alt="Project 2"
-        /></a>
-      </div>
-      <div class="wrapper project-wrapper">
-        <a href="https://github.com/"
-          ><img src="assets/web.jpg" alt="Project 3"
-        /></a>
-      </div>
-      <div class="wrapper project-wrapper">
-        <a href="https://github.com/"
-          ><img src="assets/web.jpg" alt="Project 4"
-        /></a>
-      </div>
-    </section>
-
-    <section class="skills" id="skills">
-      <div class="wrapper">
-        <h3>Frontend</h3>
-        <article class="frontend-skills">
-          <p><i class="fab fa-html5"></i> HTML</p>
-          <p><i class="fab fa-css3-alt"></i> CSS</p>
-          <p><i class="fab fa-sass"></i> SASS</p>
-          <p><i class="fab fa-less"></i> LESS</p>
-          <p><i class="fab fa-js"></i> JavaScript</p>
-          <p><i class="fab fa-react"></i> React</p>
-          <p><i class="fab fa-angular"></i> Angular</p>
-          <p><i class="fas fa-cube"></i> Material UI</p>
-        </article>
-      </div>
-
-      <div class="wrapper">
-        <h3>Backend</h3>
-        <article class="backend-skills">
-          <p><i class="fab fa-node-js"></i> Node.js</p>
-          <p><i class="fas fa-server"></i> Express.js</p>
-          <p><i class="fas fa-code"></i> APIs</p>
-          <p><i class="fas fa-database"></i> Database CRUD</p>
-          <p><i class="fab fa-git-alt"></i> Git</p>
-          <p><i class="fas fa-project-diagram"></i> GraphQL</p>
-          <p><i class="fas fa-globe"></i> Web Servers</p>
-        </article>
-      </div>
-
-      <div class="wrapper">
-        <h3>Design</h3>
-        <article class="design-skills">
-          <p><i class="fas fa-pencil-ruler"></i> Photoshop</p>
-          <p><i class="fas fa-paint-brush"></i> Canva</p>
-          <p><i class="fab fa-figma"></i> Figma</p>
-          <p><i class="fas fa-drafting-compass"></i> Sketch</p>
-          <p><i class="fab fa-adobe"></i> Adobe Illustrator</p>
-          <p><i class="fas fa-file-pdf"></i> InDesign</p>
-        </article>
-      </div>
-
-      <div class="wrapper">
-        <h3>Other</h3>
-        <article class="other-skills">
-          <p><i class="fas fa-file-alt"></i> MS Word</p>
-          <p><i class="fas fa-table"></i> MS Excel</p>
-          <p><i class="fas fa-headset"></i> IT Support</p>
-          <p><i class="fas fa-presentation"></i> PowerPoint</p>
-          <p><i class="fas fa-file"></i> Google Docs</p>
-          <p><i class="fas fa-database"></i> Database Management</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="education" id="education">
-      <div class="wrapper">
-        <h3>Education</h3>
-        <article class="education-content">
-          <div class="education-item">
-            <h4><i class="fas fa-university"></i> Universitas Darma Persada</h4>
-            <p>
-              <i class="fas fa-desktop"></i> S1 Teknologi Informasi <br />
-              <i class="fas fa-calendar-alt"></i> 2018 - 2022
-            </p>
-          </div>
-
-          <div class="education-item">
-            <h4>
-              <i class="fas fa-school"></i> SMK Dinamika Pembangunan 1 Jakarta
+      <!-- Project Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project Card 1 -->
+        <div
+          class="project-card bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+        >
+          <img
+            src="https://via.placeholder.com/300x150"
+            alt="Online Marketplace"
+            class="project-image rounded-t-lg w-full h-40 object-cover"
+          />
+          <div class="p-4">
+            <h4 class="font-semibold text-lg text-gray-800">
+              Online Marketplace
             </h4>
-            <p>
-              <i class="fas fa-laptop-code"></i> Jurusan Teknik Komputer
-              Jaringan (TKJ) <br />
-              <i class="fas fa-calendar-alt"></i> 2015 - 2018
-            </p>
+            <div class="flex space-x-3 mt-2">
+              <i class="fab fa-react text-blue-500"></i>
+              <i class="fab fa-node text-green-600"></i>
+              <i class="fab fa-cc-visa text-purple-600"></i>
+            </div>
           </div>
-        </article>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div
+          class="project-card bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+        >
+          <img
+            src="https://via.placeholder.com/300x150"
+            alt="Personal Blog"
+            class="project-image rounded-t-lg w-full h-40 object-cover"
+          />
+          <div class="p-4">
+            <h4 class="font-semibold text-lg text-gray-800">Personal Blog</h4>
+            <div class="flex space-x-3 mt-2">
+              <i class="fab fa-html5 text-orange-500"></i>
+              <i class="fab fa-css3-alt text-blue-500"></i>
+              <i class="fab fa-js text-yellow-500"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div
+          class="project-card bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+        >
+          <img
+            src="https://via.placeholder.com/300x150"
+            alt="Portfolio Website"
+            class="project-image rounded-t-lg w-full h-40 object-cover"
+          />
+          <div class="p-4">
+            <h4 class="font-semibold text-lg text-gray-800">
+              Portfolio Website
+            </h4>
+            <div class="flex space-x-3 mt-2">
+              <i class="fab fa-github text-gray-700"></i>
+              <i class="fab fa-bootstrap text-purple-500"></i>
+              <i class="fab fa-php text-blue-500"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 4 -->
+        <div
+          class="project-card bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+        >
+          <img
+            src="https://via.placeholder.com/300x150"
+            alt="Task Management App"
+            class="project-image rounded-t-lg w-full h-40 object-cover"
+          />
+          <div class="p-4">
+            <h4 class="font-semibold text-lg text-gray-800">
+              Task Management App
+            </h4>
+            <div class="flex space-x-3 mt-2">
+              <i class="fab fa-angular text-red-600"></i>
+              <i class="fab fa-node text-green-600"></i>
+              <i class="fab fa-docker text-blue-500"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 5 -->
+        <div
+          class="project-card bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+        >
+          <img
+            src="https://via.placeholder.com/300x150"
+            alt="E-commerce Store"
+            class="project-image rounded-t-lg w-full h-40 object-cover"
+          />
+          <div class="p-4">
+            <h4 class="font-semibold text-lg text-gray-800">
+              E-commerce Store
+            </h4>
+            <div class="flex space-x-3 mt-2">
+              <i class="fab fa-react text-blue-500"></i>
+              <i class="fab fa-node text-green-600"></i>
+              <i class="fab fa-cc-mastercard text-red-600"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 6 -->
+        <div
+          class="project-card bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+        >
+          <img
+            src="https://via.placeholder.com/300x150"
+            alt="Social Media App"
+            class="project-image rounded-t-lg w-full h-40 object-cover"
+          />
+          <div class="p-4">
+            <h4 class="font-semibold text-lg text-gray-800">
+              Social Media App
+            </h4>
+            <div class="flex space-x-3 mt-2">
+              <i class="fab fa-angular text-red-600"></i>
+              <i class="fab fa-node text-green-600"></i>
+              <i class="fab fa-database text-blue-500"></i>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
 
-    <section class="certificate" id="certificate">
-      <div class="wrapper">
-        <h3>Certificates</h3>
-        <article class="certificate-content">
-          <div class="certificate-item">
-            <h4>Certified Web Developer</h4>
-            <p>Udemy</p>
+    <!-- Skills Content -->
+    <div
+      id="skills-content"
+      class="content-section p-6 rounded-lg shadow-lg max-w-6xl mx-auto mt-8"
+    >
+      <h3
+        class="text-xl sm:text-lg md:text-2xl lg:text-3xl font-bold text-yellow-500 mb-6 text-center whitespace-nowrap"
+      >
+        🚀 Technical Skills & Expertise
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Front-End Skills -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+          <h4 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
+            🎨 Front-End
+          </h4>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+            <div class="flex flex-col items-center">
+              <!-- Flutter SVG Icon -->
+              <img src="html.png" alt="Flutter" class="w-9 h-9" />
+              <span class="mt-3 text-gray-700 dark:text-gray-300">HTML</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <i class="fab fa-css3-alt text-blue-600 text-3xl"></i>
+              <span class="mt-3 text-gray-700 dark:text-gray-300">CSS</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <i class="fab fa-js text-yellow-500 text-3xl"></i>
+              <span class="mt-3 text-gray-700 dark:text-gray-300"
+                >JavaScript</span
+              >
+            </div>
+            <div class="flex flex-col items-center">
+              <i class="fab fa-react text-blue-500 text-3xl"></i>
+              <span class="mt-3 text-gray-700 dark:text-gray-300"
+                >React.js</span
+              >
+            </div>
+            <div class="flex flex-col items-center">
+              <i class="fab fa-bootstrap text-purple-600 text-3xl"></i>
+              <span class="mt-3 text-gray-700 dark:text-gray-300"
+                >Bootstrap</span
+              >
+            </div>
+            <div class="flex flex-col items-center">
+              <!-- Tailwind SVG Icon -->
+              <img src="tailwind.svg" alt="tailwind" class="w-9 h-9" />
+              <span class="mt-3 text-gray-700 dark:text-gray-300"
+                >TailwindCSS</span
+              >
+            </div>
           </div>
-          <div class="certificate-item">
-            <h4>JavaScript Mastery</h4>
-            <p>Codecademy</p>
+        </div>
+
+        <!-- Back-End Skills -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+          <h4 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
+            🖥️ Back-End
+          </h4>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+            <div class="flex flex-col items-center">
+              <i class="fab fa-php text-indigo-600 text-3xl"></i>
+              <span class="mt-3 text-gray-700 dark:text-gray-300">PHP</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <i class="fas fa-database text-blue-600 text-3xl"></i>
+              <span class="mt-3 text-gray-700 dark:text-gray-300">MySQL</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <i class="fab fa-node text-green-600 text-3xl"></i>
+              <span class="mt-3 text-gray-700 dark:text-gray-300">Node.js</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <i class="fab fa-laravel text-red-600 text-3xl"></i>
+              <span class="mt-3 text-gray-700 dark:text-gray-300">Laravel</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <!-- Restapi SVG Icon -->
+              <img src="restapi.svg" alt="Flutter" class="w-9 h-9" />
+              <span class="mt-3 text-gray-700 dark:text-gray-300">RestAPI</span>
+            </div>
           </div>
-          <div class="certificate-item">
-            <h4>React.js Fundamentals</h4>
-            <p>Coursera</p>
+        </div>
+
+        <!-- Mobile Development -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+          <h4 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
+            📱 Mobile
+          </h4>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+            <div class="flex flex-col items-center">
+              <!-- Flutter SVG Icon -->
+              <img src="flutter.svg" alt="Flutter" class="w-9 h-9" />
+              <span class="mt-3 text-gray-700 dark:text-gray-300">Flutter</span>
+            </div>
           </div>
-          <div class="certificate-item">
-            <h4>Front-End Web Development</h4>
-            <p>Google Developer</p>
+        </div>
+
+        <!-- Tools & Technologies -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+          <h4 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
+            🛠️ Tools & Technologies
+          </h4>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+            <div class="flex flex-col items-center">
+              <i class="fab fa-git-alt text-red-600 text-3xl"></i>
+              <span class="mt-3 text-gray-700 dark:text-gray-300">Git</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <i class="fab fa-github text-black text-3xl"></i>
+              <span class="mt-3 text-gray-700 dark:text-gray-300">GitHub</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <i class="fab fa-docker text-blue-500 text-3xl"></i>
+              <span class="mt-3 text-gray-700 dark:text-gray-300">Docker</span>
+            </div>
           </div>
-          <div class="certificate-item">
-            <h4>API Development</h4>
-            <p>Postman</p>
-          </div>
-          <div class="certificate-item">
-            <h4>Node.js Developer</h4>
-            <p>LinkedIn Learning</p>
-          </div>
-          <div class="certificate-item">
-            <h4>Cloud Computing with AWS</h4>
-            <p>AWS Training</p>
-          </div>
-          <div class="certificate-item">
-            <h4>Data Structures and Algorithms</h4>
-            <p>GeeksforGeeks</p>
-          </div>
-          <div class="certificate-item">
-            <h4>Cybersecurity Essentials</h4>
-            <p>Cisco Networking Academy</p>
-          </div>
-          <div class="certificate-item">
-            <h4>Agile Project Management</h4>
-            <p>Scrum.org</p>
-          </div>
-        </article>
+        </div>
       </div>
-    </section>
+    </div>
 
-    <footer>&copy; Fachri Ramdhan 2024</footer>
-    <!-- belum diedit -->
-
+    <!-- Footer -->
+    <footer class="py-4 text-center">
+      <p class="text-gray-600 dark:text-white">
+        © 2024 Fachri Ramdhan. All rights reserved.
+      </p>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
